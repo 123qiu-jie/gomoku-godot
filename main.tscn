@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://do0aqrnclrlqb"]
+
+[ext_resource type="Script" uid="uid://dymguoy7y4n20" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cjxe2ksw4cf5i" path="res://GobangBoard.gd" id="1_ig7tw"]
+
+[node name="Main" type="Control" unique_id=1614716808]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1050009199]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -639.1111
+offset_top = -359.5
+offset_right = 639.1111
+offset_bottom = 359.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.89411765, 0.6901961, 0.36078432, 1)
+
+[node name="GobangBoard" type="Control" parent="." unique_id=1263819212]
+custom_minimum_size = Vector2(560, 560)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -280.0
+offset_right = 280.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+metadata/_custom_type_script = "uid://cjxe2ksw4cf5i"
+
+[node name="HostBtn" type="Button" parent="." unique_id=1615430131]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 31.0
+offset_right = 111.0
+offset_bottom = 62.0
+text = "创建房间"
+
+[node name="JoinBtn" type="Button" parent="." unique_id=264363952]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 31.0
+offset_right = 208.0
+offset_bottom = 62.0
+text = "加入房间"
+
+[node name="UserName" type="TextEdit" parent="." unique_id=880880800]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 89.0
+offset_right = 208.0
+offset_bottom = 122.0
+placeholder_text = "请输入用户名"
+
+[node name="BlackSeat" type="Label" parent="." unique_id=521459481]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 296.0
+offset_right = 79.0
+offset_bottom = 319.0
+text = "1"
+
+[node name="WhiteSeat" type="Label" parent="." unique_id=2092295894]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -74.0
+offset_top = 296.0
+offset_right = -34.0
+offset_bottom = 319.0
+grow_horizontal = 0
+text = "2"
+
+[node name="Result" type="Panel" parent="." unique_id=1393029820]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -90.0
+offset_right = 182.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Result" unique_id=76582534]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU WIN"
+
+[connection signal="pressed" from="HostBtn" to="." method="_on_host_btn_pressed"]
+[connection signal="pressed" from="JoinBtn" to="." method="_on_join_btn_pressed"]
